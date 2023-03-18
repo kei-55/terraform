@@ -29,6 +29,7 @@ resource "proxmox_vm_qemu" "intern-vm" {
   target_node = "pve"
   clone = "ubuntu-22.04.2"
   os_type = "ubuntu"
+  ostemplate = "local:iso/ubuntu-22.04.2-live-server-amd64.iso"
   boot = "order=virtio0"
   cores   = "${var.cores}"
   memory  = "${var.memory}"
