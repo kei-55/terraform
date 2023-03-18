@@ -17,6 +17,7 @@ terraform {
   }
 }
 
+# Configure the Proxmox
 provider "proxmox" {
   pm_api_token_id = "${var.pm_api_token_id}"
   pm_api_token_secret = "${var.pm_api_token_secret}"
@@ -24,6 +25,7 @@ provider "proxmox" {
   pm_tls_insecure = true
 }
 
+# Create a VM
 resource "proxmox_vm_qemu" "intern-vm" {
   name = "ubuntu-${var.username}"
   target_node = "pve"
