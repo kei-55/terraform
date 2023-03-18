@@ -25,10 +25,10 @@ provider "proxmox" {
 }
 
 resource "proxmox_vm_qemu" "intern-vm" {
-  name = "${var.username}"
+  name = "ubuntu-${var.username}"
   target_node = "pve"
   clone = "ubuntu-22.04.2"
-  os_type = "cloud-init"
+  os_type = "ubuntu"
   boot = "order=virtio0"
   cores   = "${var.cores}"
   memory  = "${var.memory}"
